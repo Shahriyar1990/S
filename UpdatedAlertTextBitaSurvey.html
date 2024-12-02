@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظر سنجی بیتا</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #f7f9fc, #dde7f1);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h2 {
+            background-color: #6a5acd;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 20px auto;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 20px auto;
+            width: 80%;
+        }
+        form {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 70%;
+        }
+        label {
+            font-size: 1.2em;
+            margin: 10px 0;
+            display: block;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="button"], button {
+            background-color: #6a5acd;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover, button:hover {
+            background-color: #5741b4;
+        }
+        #passwordForm {
+            display: none;
+            margin: 20px auto;
+            padding: 20px;
+            background: #eef2f7;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 60%;
+        }
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            background: #d4edda;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 1.2em;
+            color: #155724;
+        }
+        h3 {
+            color: #333;
+            font-size: 1.5em;
+        }
+    </style>
+    <script>
+        function showResults() {
+            const password = document.getElementById('password').value;
+            if (password === 'OnlyForBita') {
+                document.getElementById('result').innerHTML = `
+                    <p style="direction: rtl; text-align: right; font-weight: bold;">عالیه! 🎉</p>
+                    <p style="direction: rtl; text-align: right;">اگه A رو انتخاب کردی: مقصد ما <strong>Mariposa</strong> است، یه شهر جذاب با منظره‌های ناب. آماده شو برای یه روز آروم و پر از حس خوب! 🌄</p>
+                    <p style="direction: rtl; text-align: right;">اگه B رو انتخاب کردی: مقصد ما <strong>Carmel Beach</strong> و <strong>Monterey</strong> هست، یه ترکیب بی‌نظیر از ساحل، دریا و حس ماجراجویی. 🌊</p>
+                `;
+            } else {
+                alert('بیــــــــتا! رمز رو اشتباه نزن! 😏');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>👋 نظر سنجی بیتا</h2>
+    <p style="direction: rtl;">
+        سلام بیتا! 🌟<br>
+        دو برنامه جذاب برای آخر هفته آماده کردم. هر کدوم یه هیجان خاص داره!<br>
+        بهت حق انتخاب می‌دم، اما یه چالش داره: تا وقتی که نریم، نمی‌تونی بدونی کجا داریم می‌ریم! 😏
+    </p>
+    <form>
+        <p style="direction: rtl;">یکی از این دو گزینه رو انتخاب کن:</p>
+        <label style="direction: rtl;">
+            <input type="radio" name="option" value="A"> A: یه جای آرامش‌بخش و خوش‌منظره
+        </label>
+        <label style="direction: rtl;">
+            <input type="radio" name="option" value="B"> B: یه جای پرانرژی با حال و هوای ساحل
+        </label>
+        <p style="direction: rtl;">حالا گزینه ثبت رو بزن! 😉</p>
+        <input type="button" value="ثبت انتخاب" onclick="document.getElementById('passwordForm').style.display = 'block';">
+    </form>
+
+    <div id="passwordForm">
+        <h3 style="direction: rtl;">برای دیدن مقصد، رمزی لازم داری که فقط روز حرکت بهت می‌دم! 😉</h3>
+        <input type="password" id="password" placeholder="رمز خود را وارد کنید">
+        <button onclick="showResults()">رمز بیتا</button>
+    </div>
+
+    <div id="result"></div>
+</body>
+</html>
